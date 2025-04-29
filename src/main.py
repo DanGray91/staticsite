@@ -8,6 +8,9 @@ from md_to_html import markdown_to_html_node
 def generate_page(from_path, template_path, dest_path, basepath="/"):
     print(f"Generating page from {from_path} to {dest_path} using {template_path}")
     
+    if not basepath.endswith('/'):
+        basepath = basepath + '/'
+
     with open(from_path, 'r') as f:
         markdown_content = f.read()
     
@@ -92,4 +95,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
